@@ -1,0 +1,42 @@
+GIT WORKFLOW FUNDAMENTALS
+
+- Working directory: this is the directory that you are currently working in and can be seen by the path in the terminal.
+
+- Staging area: The staging area is where files are after being added but before being committed.
+
+- Local Repo (head): A local repository is a git repository that is hosted on the machine locally, rather than on the
+                     internet or another network. Head refers to the most recent commit on the currently checked
+                     out branch.
+
+- Remote repo (master): A remote repository is a git repository that is not hosted on the machine locally, but is
+                        hosted on the internet or another network. Master means the repository currently has master set
+                        as the default branch, the default branch is also commonly called 'main'.
+
+WORKING DIRECTORY STATES
+
+- Staged: A staged file is a file that has been added to the staging area, but has not yet been committed. It could be
+          a new file or an old file that has be modified.
+
+- Modified: A modified file is a file that has been versioned and then edited; it will be recognised as modified but
+            be unstaged until 'git add' is used.
+
+- Committed: A committed file has been stored in (or had its changes stored in) a 'snapshot' in the git index.
+
+GIT COMMANDS
+
+- git add: This stages all the changes in a specified directory or file.
+
+- git commit: This commits all the files in the staging area to a snapshot in the git index. A message can be added
+              using git commit -m "<message>".
+
+- git push: This uploads the committed files in the local repository to the remote repository.
+            A branch can be specified and is created if it doesn't already exist.
+
+- git fetch: This retrieves (fetches) a specific branch/branches from the repository using git fetch <remote> <branch>.
+             All remote references can be retrieved by dropping the branch.
+
+- git merge: This adds the changes from one branch back into another branch e.g. branch_a added back to main.
+
+- git pull: This downloads data from the remote repository (e.g. from github), it is a combination of fetch and merge
+            and so it fetches and merges the retrieved data into the local repository.
+
