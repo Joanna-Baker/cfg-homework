@@ -24,7 +24,7 @@ def check_pin_code():
     while count < 3:
         try:
             count += 1
-            validate_pin_is_valid(int(input("Please enter your 4 digit pin number: ")))
+            validate_pin(int(input("Please enter your 4 digit pin number: ")))
             return
         except ValueError:
             print("Invalid input. You have entered something that isn't a number!")
@@ -35,18 +35,20 @@ def check_pin_code():
     raise Exception("Sorry, you have attempted to enter your pin incorrectly too many times.")
 
 
-def validate_pin_is_valid(pin):
+def validate_pin(pin):
     if pin != 1234:
         raise Exception
 
 
 def withdrawal(account_balance):
     amount = None
-    while amount is None:
+    number_of_tries = 0
+    while amount is None and number_of_tries <= 3:
         try:
             amount = validate_withdrawal_amount(int(input("Please enter your withdrawal amount: ")), account_balance)
             return amount
         except ValueError:
+            number_of_tries += 1
             print("Invalid input. Please enter a number.")
         except:
             print("Sorry you do not have the required funds.")
