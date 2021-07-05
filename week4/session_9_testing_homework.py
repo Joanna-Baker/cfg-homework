@@ -8,11 +8,13 @@ from week4.exception_handling_atm_machine import withdrawal
 """
 Write at least 5 unit tests to test the functions used in the atm machine program
 
-If input is not an integer, raise an error.
-If input is not the correct number.
-If pin is entered incorrectly more than 3 times.
-If withdrawal input is not an integer.
-If withdrawal is more than available balance.
+If input is not an integer, raise an exception.
+If input is not the correct number, raise an exception.
+If input is the correct number, continue.
+If pin is entered incorrectly more than 3 times, raise an exception.
+If withdrawal input is not an integer, raise an exception.
+If withdrawal is more than available balance, raise an exception and quit program.
+If withdrawal amount is less than available balance, continue.
 """
 
 @patch('builtins.input', lambda *args: 'asdf')
