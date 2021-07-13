@@ -1,9 +1,9 @@
 from unittest.mock import patch
 import pytest
-from week4.exception_handling_atm_machine import check_pin_code
-from week4.exception_handling_atm_machine import validate_pin
-from week4.exception_handling_atm_machine import validate_withdrawal_amount
-from week4.exception_handling_atm_machine import withdrawal
+from exception_handling_atm_machine import check_pin_code
+from exception_handling_atm_machine import validate_pin
+from exception_handling_atm_machine import validate_withdrawal_amount
+from exception_handling_atm_machine import withdrawal
 
 """
 Write at least 5 unit tests to test the functions used in the atm machine program
