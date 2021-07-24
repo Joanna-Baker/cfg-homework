@@ -28,6 +28,7 @@ class Student:
         self.id = input("Please enter your student ID number: ")
 
         self.students.append({'name': self.name, 'age': self.age, 'id': self.id})
+        print(f"The student's name is {self.name}, they are {self.age} years old and their id is {self.id}.")
 
 
 class CFGStudent(Student):
@@ -41,12 +42,20 @@ class CFGStudent(Student):
             self.subjects.append({'id': split[0], 'subject': split[1], 'grade': split[2]})
         print(self.subjects)
 
+    def remove_subject(self, subject_name):
+        for subject in self.subjects:
+            if subject_name == subject['subject']:
+                self.subjects.remove(subject)
+                print(f"The {subject_name} subject has been removed from the student's list")
+                print(f"The remaining subjects are {self.subjects}")
+                break
+
     def check_subjects(self, id):
         print(f"These are all the subjects for student id {id}: {', '.join([item['subject'] for item in self.subjects])}")
 
 
     def overall_grade(self, id):
-        grades = [int(item['grade']) for item in self.subjects]
+        grades = [int(grade['grade']) for grade in self.subjects]
         number_of_grades = len(grades)
         total_of_grades = sum(grades)
         average = total_of_grades / number_of_grades
@@ -54,28 +63,43 @@ class CFGStudent(Student):
 
 
 student2 = CFGStudent()
+student2.add_student()
 student2.add_subjects()
 student2.overall_grade(1234)
 student2.check_subjects(1234)
+student2.remove_subject('Software')
 
 # # # example usage # # #
 """
-3 subjects and grades
+Geraldine
+21
+1234
+3
 1234:Software:75
-1234:Software:50
-1234:Software:83
+1234:Data:50
+1234:Theory:83
 
 Output:
 
+The student's name is Geraldine, they are 21 years old and their id is 1234.
+
 [
   {'id': '1234', 'subject': 'Software', 'grade': '75'}, 
-  {'id': '1234', 'subject': 'Software', 'grade': '50'}, 
-  {'id': '1234', 'subject': 'Software', 'grade': '83'}
+  {'id': '1234', 'subject': 'Data', 'grade': '50'}, 
+  {'id': '1234', 'subject': 'Theory', 'grade': '83'}
 ]
 
 The mean of student 1234's grades is 69.33333333333333
 
 These are all the subjects for student id 1234: Software, Software, Software
+
+The Software subject has been removed from the student's list
+
+The remaining subjects are 
+[
+  {'id': '1234', 'subject': 'Data', 'grade': '50'}, 
+  {'id': '1234', 'subject': 'Theory', 'grade': '83'}
+]
 """
 
 
