@@ -257,15 +257,15 @@ import to make it available in other modules and scripts
                 print("After the function")
             return inner_wrapper()
 
-        def func():
-            print("Hello, my name is Jo")
+    def func():
+        print("Hello, my name is Jo")
 
-        decorator(func)
+    decorator(func)
 
-        output:
-                Before the function
-                Hello, my name is Jo
-                After the function
+    output:
+            Before the function
+            Hello, my name is Jo
+            After the function
 
 To use this code as a decorator, the syntax would be:
     
