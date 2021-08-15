@@ -249,13 +249,14 @@ done by defining a function that returns another function. The decorator can be 
 import to make it available in other modules and scripts
 
         
+
     e.g 
-        def decorator(f):
-            def inner_wrapper():
-                print("Before the function")
-                f()
-                print("After the function")
-            return inner_wrapper()
+    def decorator(f):
+        def inner_wrapper():
+            print("Before the function")
+            f()
+            print("After the function")
+        return inner_wrapper()
 
     def func():
         print("Hello, my name is Jo")
